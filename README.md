@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Clone the existing repository into a local repo with   git clone git@github.com:sam-tuck/Contacts.git.
+Run the   npm i   command in your terminal while in your root directory (it should be Contacts)
+Type npm start into your terminal.
 
 ## Available Scripts
 
