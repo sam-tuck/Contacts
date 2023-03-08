@@ -1,12 +1,10 @@
-FROM node:17.1-alpine as build-stage
+FROM node:17.1-alpine as builder
 WORKDIR /app
-COPY package*.json ./
+COPY package.json .
 RUN npm install
 COPY . .
 RUN npm run build
 
-FROM nginx:1.22.1-alpine as prod-stage
-COPY --from=build-stage /app/build /usr/share/nginx/html
+FROM nginx
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-
+COPY --from=builder /app/build /usr/share/nginx/html
